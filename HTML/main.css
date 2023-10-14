@@ -12,3 +12,10 @@ a:visited {
 a:hover, a:active {
     color: #be2121;
 }
+
+table, tr, td, th, caption {
+    border: 1px solid #00070c;
+    font-family: 'Courier New', 'Courier New', Courier, monospace;
+    border-collapse: collapse;
+    padding: 0.5rem;
+}
