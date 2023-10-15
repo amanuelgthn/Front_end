@@ -195,9 +195,36 @@
             </p>
             <p>
                 <label for="password">password</label>
-                <input type="password" name="password" id="password" placeholder="your secret" required>
+                <input type="password" name="password" id="password" 
+                placeholder="555-555-5555"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
             </p>
-        </article>
+            <p>
+                <label for="phone">phone</label>
+                <input type="number" name="phone" placeholder="55-555-5555"
+                pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}">
+            </p>
+            <p>
+            <label for="decade">favorite decade</label>
+            <input type="number" name="decade" id="decade" min="1950" max="2020" step="10" value="1950">
+            </p>
+            <p>
+                <label for="coffe">Favorite Coffee:</label>
+                <select name="coffee" id="coffee" multiple size="5">
+                    <optgroup label="Coffees">
+                    <option value="regular coffee">Regular coffee</option>
+                    <option value="iced coffee">Iced COffee</option>
+                </optgroup>
+                <optgroup label="Esperesso Drinks">
+                    <option value="lattee" selected>Lattee</option>
+                    <option value="caoouccino">Cappuccion</option>
+                    <option value="cortado">cortado</option>
+                    <option value="americano">Americano</option>
+                </optgroup>
+                    <option value="others">Others</option>
+                </select>
+            </p>
+    </article>
     </main>
     <footer>
         <p>
