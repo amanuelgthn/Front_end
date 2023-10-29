@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*
+Typography is the that text
+is arranged and presented
+*/
+body {
+    padding: 10%;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    /* cursor: not-allowed; */
+    cursor: pointer;
+    color: blue;
+}
+
+/* sudo class-visited to select and modify the behaviour 
+of visited pages */
+ a:visited {
+    color: purple;
+ }
+/* sudo class-hover to select and modify the behaviour 
+when cursor hovers on selected text
+ */
+ a:hover, a:focus {
+    color: dodgerblue;
+    opacity: 0.2;
+    font-size: 3rem;
+    font-style: underline;
+    background-color: antiquewhite;
+ }
+/* sudo class-active to select and modify the behaviour
+of :active pages
+ */
+ a:active {
+    color: red;
+ }
