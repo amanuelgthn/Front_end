@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*
+Typography is the that text
+is arranged and presented
+*/
+body {
+    padding: 10%;
+    font-size: 2rem;
+}
+
+/* input, button {
+    font: inherit;
+} */
+p {
+    /* text-decoration: underline; */
+   /*  text-decoration: line-through; */
+   text-decoration: none;
+   text-transform: capitalize;
+   text-align: justify;
+   text-indent: 2em;
+   line-height: 1.9;
+   letter-spacing: 0.01em;
+   word-spacing: 0.1em;
+   font-weight: 500;
+   font-style: oblique;
+   font-family: 'Roboto', sans-serif;
+   /*websafe fonts */
+}
