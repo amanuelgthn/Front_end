@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    padding: 5% 10%;
+    font-size: 2rem;
+    font-family: "Roboto", "sans-serif";
+}
+
+ol {
+    /* list-style-type: lower-alpha; */
+    /* list-style-type: upper-roman; */
+    list-style-type: none;
+    padding: 0;
+}
+ul {
+    list-style:square;
+    list-style-position: inside;
+    color: blue;
+    line-height: 1.6;
+    /* list-style-image: url(../images/free-check-mark.png);
+    /*using list-style-image won't be convinient to resize the image
+    if the image doesn't match our intended use. */
+    /* the best way for this solution is to use the background-image and background-size
+    to udpate the images size. */
+    /* the other alternative is to resize the image before
+    using it in our code to match our solution. */
+      list-style-image: url(../images/checkmark\ \(1\).webp);
+    }
+
+
+/* pseudo class -to select only one of the list we can use
+nth-child() to select and then specify the rank of the list
+where we want to select */
+ul li:nth-child(2) {
+    color: red;
+}
+
+/* pseudo element - marker*/
+ul ::marker {
+    color: purple;
+    font-family: fantasy;
+    font-size: 1em;
+    content: "Only 5PLN >>  ";
+}
