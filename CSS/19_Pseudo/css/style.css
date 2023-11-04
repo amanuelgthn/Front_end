@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Roboto&display=swap');
+
+
+/* || RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+}
+
+main {
+    text-align: center;
+}
+
+/* || UTILITY CLASSES */
+.nowrap {
+    white-space: nowrap;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font: 1rem "Nunito", sans-serif;
+    min-height: 100vh;
+    background-color: #c97676;
+    background-image: radial-gradient(whitesmoke, #c97676);
+    display: flex;
+    flex-direction: column;
+}
+
+/* header, nav, main, footer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+ */
+header, footer {
+    position: sticky;
+    width: 100%;
+    background-color: #1E293B;
+    color: whitesmoke;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+nav {
+    background-color: white;
+    font-size: 1.2rem;
+    color: #000;
+    padding: 0.5rem;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* nav a:link,
+nav a:visited {
+    color: #000000;
+}
+/* instead of declearing both link and visited we can 
+use any-link pseudo class property */
+nav a:any-link {
+    color: #000;
+}
+ */
+/* nav a:hover,
+nav a:focus {
+    color: hsla(0, 0%, 20%, 0.6);
+} */
+/* Instead of using the above where defining the tags for hover
+and focus we can use the pseudo class property "is"
+to define both tag properties in a single nav definition 
+Alternatively we can use the pseudo class property "where" 
+but it has no specifity 
+D.R.Y DON'T REPEAT YOURSELF */
+nav :is(a:hover, a:focus) {
+    color: hsla(0, 0%, 20%, 0.6);
+}
+
+nav a:active {
+    color: red;
+    font-size: 1.5rem;
+}
+main {
+    flex-grow: 1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+header {
+    top:0;
+}
+footer {
+    bottom: 0;
+}
+/* || Profile Card */
+.card {
+    scroll-margin-top: 8rem;
+    width: min(100%, 350px);
+    background-color: #cbd5cbe1;
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:target {
+    border: 2px solid rebeccapurple;
+}
+.card figure {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card img {
+    border: 5px double #000;
+    border-radius: 50%;
+}
+
+/* selecting all images with alt atribute  */
+.card img:not([alt]) {
+    border: 5px solid rgb(5, 39, 20);
+}
+
+.card:nth-child(even) {
+    background-color: antiquewhite;
+}
+.card figcaption {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.card figcaption::after {
+    content: '✨';
+    display: block;
+}
+
+.card figcaption::first-letter {
+    font-size: 3rem;
+
+}
+
+.card p {
+    position: relative;
+}
+.card p::before {
+    content: open-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    left: -0.2em;
+}
+
+.card p::after {
+    content: close-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    right: -0.2em;
+/* || SMALL */
+@media screen and (min-width: 576px) {
+    main {
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+    .card {
+        width: min(100%, 400px);
+    }
+    .card:last-child {
+        order: -1;
+    }
+}
+
+/* || Medium */
+@media screen and (min-width: 768px) {
+    nav {
+        display:block;
+    }
+    .card {
+        width: min(100%, 325px);
+    }
+    .card figure {
+        flex-flow: column-reverse;
+    }
+    .card figcaption {
+        margin: 0.1em;
+    }
+    .card p {
+        margin-top: 1rem;
+    }
+}
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+   .card {
+    width: min(100%, 400px);
+   }
+   .card:nth-child(2) {
+    order: -1;
+   }
+}
+
+/* || XL */
+@media screen and (min-width: 1200px) {
+    .card {
+        width: min(calc(33%-1rem, 500px));
+    }
+}
+
+/* || MOBILE DEVICE LANDSCAPE */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    nav {
+        display: none;
+    }
+    main {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-content: stretch;
+    }
+    .card {
+        width: min(calc(33%-0.25rem), 200px);
+    }
+
+    .card figcaption .card p {
+        font-size: 1.25rem;
+    }
+}
