@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 1.5rem "Nunito", sans-serif;
+    min-height: 100vh;
+    background-color: #c97676;
+    background-image: radial-gradient(whitesmoke, #c97676);
+    display: flex;
+    flex-direction: column;
+}
+
+header, nav, main, footer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+
+header, footer {
+    position: sticky;
+    background-color: #1E293B;
+    color: whitesmoke;
+}
+nav {
+    background-color: white;
+    color: #000;
+    padding: 0.5rem;
+    border-bottom: 2px solid #000;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header {
+    top:0;
+}
+footer {
+    bottom: 0;
+}
+
+/* || SMALL */
+@media screen and (min-width: 576px) {
+    body {
+        background-color: greenyellow;
+        background-image: radial-gradient(whitesmoke, red);
+    }
+}
+
+/* || Medium */
+@media screen and (min-width: 768px) {
+    body {
+        background-color: gold;
+        background-image: radial-gradient(whitesmoke, gold);
+    }
+}
+
+/* || LARGE */
+@media screen and (min-width: 992px) {
+    body {
+        background-color: purple;
+        background-image: radial-gradient(whitesmoke, purple);
+    }
+}
+
+/* || XL */
+@media screen and (min-width: 1200[px]) {
+    body {
+        background-color: black;
+        background-image: radial-gradient(whitesmoke, black);
+    }
+}
+
+/* || MOBILE DEVICE LANDSCAPE */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    body {
+        background-color: dodgerblue;
+        background-image: radial-gradient(whitesmoke, dodgerblue);
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    nav {
+        display: none;
+    }
+}
