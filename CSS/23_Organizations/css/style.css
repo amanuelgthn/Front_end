@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* || RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.root:
+html {
+    font-size: 2.5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+/* || BLOCKS */
+/* aka components */
+
+.header {
+    background-color: var(--HEADER_BGCOLOR);
+}
+button {
+    font-size: 1rem;
+}
+.btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+
+/* || MODIFIERS */
+/* incremental style changes */
+
+/* Blocks with modifiers */
+
+.btn--secondary {
+    background-color: red;
+    border: 5PX solid burlywood;
+}
+
+.btn--lean {
+    transform: skewX(-10deg);
+    border: 5PX solid green;
+}
+
+.btn--border-lg {
+    border: 5px solid black;
+}
