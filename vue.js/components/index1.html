@@ -28,6 +28,7 @@
 <body>
     <div id="app" v-cloak>
         <login-form />
+
         <hr>
         <button v-on:click="toggleBox">Toggle Box</button>
         <div v-if="isVisible" class="box"></div>
@@ -42,17 +43,29 @@
         can be used
          */
         app.component('login-form', {
+            /* to capture inputs in the form we use v-model in the form */
             template: `
-                <div>
-                    <h1>{{ title }}</h1>
-                    <input type="email" placeholder="Enter your email address" />
-                    <input type="password" placeholder="Password" />
-                </div>
+                <form @submit.prevent="handleSubmit">
+                        <h1>{{ title }}</h1>
+                        <input type="email" v-model="email" placeholder="Enter your email address"/>
+                        <input type="password" v-model="password" placeholder="Password"/>
+                        <button>Login</button>
+                </form>
             `,
             /* Add data method to the component */
             data: function() {
                 return {
-                    title:'Login Form'
+                    title:'Login Form',
+                    email: '',
+                    password: '',
+                }
+            },
+            methods: {
+                handleSubmit() {
+                    /* e.preventDefault() */
+                    /* to prevent from refreshing the page when submitting
+                    form or login in ourcase  */
+                    console.log(this.email, this.password)
                 }
             }
         })
