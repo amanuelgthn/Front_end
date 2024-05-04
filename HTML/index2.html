@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trial2</title>
+</head>
+<body>
+    <button id="elem">&lt;hello&gt;</button>
+    <ul>
+        <li><a href="">A</a></li>
+        <li><a href="">B</a></li>
+        <li><a href="">C</a></li>
+        <li><a href="">D</a></li>
+    </ul>
+    <script>
+        var as = document.getElementsByTagName("a");
+        for (let i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                event.preventDefault();
+                console.log(as[i].innerText);
+                console.log("clicked")
+            }
+        }
+    </script>
+</body>
+</html>

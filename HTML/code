@@ -1,0 +1,14 @@
+var somePattern = (function() {
+    var inst;
+    _createInst() {
+    return new Object("I am new instance");
+}
+
+return {
+    getinst: function() {
+        if(!inst) {
+            inst = _createInst();
+        }
+        return inst;
+    }
+})();
