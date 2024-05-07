@@ -219,6 +219,9 @@ footer {
    .card:nth-child(2) {
     order: -1;
    }
+   main {
+    display: ;
+   }
 }
 
 /* || XL */
