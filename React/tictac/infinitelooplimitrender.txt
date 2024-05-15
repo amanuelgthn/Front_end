@@ -1,0 +1,52 @@
+### The Problem
+
+You're working with a React component called `Square`, and you want to pass a function called `handleClick` to it. The idea is that when the square is clicked, `handleClick` should be called with an argument indicating which square was clicked.
+
+You tried to do this:
+
+```jsx
+<Square value={squares[0]} onSquareClick={handleClick(0)} />
+```
+
+But this doesn't work and causes an infinite loop. Here's why:
+
+1. **Immediate Function Call**: When you write `handleClick(0)`, you are immediately calling the function `handleClick` with the argument `0` during the rendering process of the component.
+   
+2. **State Update and Re-render**: `handleClick(0)` changes the state of the component by calling `setSquares`, which triggers a re-render of the component.
+   
+3. **Infinite Loop**: Because the component re-renders, it again calls `handleClick(0)` immediately, which again updates the state, and this cycle continues, creating an infinite loop.
+
+### Why It Didn't Happen Earlier
+
+Before, you were doing something like this:
+
+```jsx
+<Square value={squares[0]} onSquareClick={handleClick} />
+```
+
+In this case, you are passing the function `handleClick` itself as a prop, not calling it immediately. The function only gets called when the user actually clicks the square, not during the component rendering. 
+
+### How to Fix It
+
+To fix the issue, you should pass a function that calls `handleClick` when the square is clicked, but don't call it immediately during rendering. You can create wrapper functions for each square like this:
+
+```jsx
+function handleFirstSquareClick() {
+  handleClick(0);
+}
+
+function handleSecondSquareClick() {
+  handleClick(1);
+}
+
+// and so on for each square...
+```
+
+Then, you pass these wrapper functions as props:
+
+```jsx
+<Square value={squares[0]} onSquareClick={handleFirstSquareClick} />
+<Square value={squares[1]} onSquareClick={handleSecondSquareClick} />
+```
+
+This way, `handleClick` is only called when the user clicks on the square, preventing the infinite loop.
