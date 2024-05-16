@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SignForm from './SignForm.js'
 import MovingDot from './MovingDot.js';
 
 export default function MyCheckBox() {
@@ -9,13 +10,14 @@ export default function MyCheckBox() {
     }
     return (
         <>
-            <label>
+            <label id='checkbox'>
                 <input type='checkbox'
                         checked={Liked}
                         onChange={handleChange} />
                         I liked this
             </label>
             <p>You {Liked ? "liked" : "did't like"} this</p>
+            <SignForm />
             <Form />
         </>
     )
@@ -27,7 +29,8 @@ function Form() {
 
   return (
     <>
-    <input value = {name}
+    <input  id='Form'
+            value = {name}
             onChange={e => setName(e.target.value)}
             />
     <button onClick={() => setAge(age + 1)}>
@@ -38,4 +41,3 @@ function Form() {
     </>
   )
 }
-
