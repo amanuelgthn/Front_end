@@ -16,7 +16,7 @@ export default function MyCheckBox() {
                         onChange={handleChange} />
                         I liked this
             </label>
-            <p>You {Liked ? "liked" : "did't like"} this</p>
+            <p>You {Liked ? "liked" : "didn't like"} this</p>
             <SignForm />
             <Form />
         </>
