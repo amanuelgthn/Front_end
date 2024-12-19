@@ -1,42 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { FC, useState } from 'react'
 import './App.css'
 
-interface user : {
-  name: Amanuel;
-  lastName: Bikora;
-}
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = ()  => {
+  const data = [
+    { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
+    { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
+    { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
+    { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
+    { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
+    { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
+  ]
+  const Fruits = data
+      .filter((category) => category.category === 'Fruits')
+      .map((category) =><>
+                          <tr>
+                            <td>{category.name}</td>
+                            <td>{category.price}</td>
+                          </tr>
+                        </>)
+  const Vegetables = data
+      .filter((category) => category.category === 'Vegetables')
+      .map((category) => <>
+                          <tr>
+                            <td>{category.name}</td>
+                            <td>{category.price}</td>
+                          </tr>
+                          </>)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='Category-Search'>
+      <input type='search' id='query' placeholder='Search'></input>
+    </div>
+    <div className='checkbox'>
+      <input type='checkbox' id='stock' />
+      <label htmlFor='stock'>Only show products in stock</label>
+    </div>
+      <div className='category-Fruits'>
+        <ul>
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>Price</td>
+            </tr>
+              <h1>Fruits</h1>
+              {Fruits}
+              <h1>Vegetables</h1>
+              {Vegetables}
+          </table>
+        </ul>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <p>{user.name}</p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
-
 export default App
