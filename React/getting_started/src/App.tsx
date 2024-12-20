@@ -11,19 +11,19 @@ const App = ()  => {
     { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
   ]
   const Fruits = data
-      .filter((category) => category.category === 'Fruits')
-      .map((category) =><>
+      .filter((data) => data.category === 'Fruits')
+      .map((data) =><>
                           <tr>
-                            <td>{category.name}</td>
-                            <td>{category.price}</td>
+                            <td>{data.name}</td>
+                            <td>{data.price}</td>
                           </tr>
                         </>)
   const Vegetables = data
-      .filter((category) => category.category === 'Vegetables')
-      .map((category) => <>
+      .filter((data) => data.category === 'Vegetables')
+      .map((data) => <>
                           <tr>
-                            <td>{category.name}</td>
-                            <td>{category.price}</td>
+                            <td>{data.name}</td>
+                            <td>{data.price}</td>
                           </tr>
                           </>)
 
