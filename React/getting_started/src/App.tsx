@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import './App.css'
 
 const App = ()  => {
+  const [filterText, setFilterText] = useState('')
   const data = [
     { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
     { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
