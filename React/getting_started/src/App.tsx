@@ -27,7 +27,9 @@ const App = ()  => {
                             <td>{data.price}</td>
                           </tr>
                           </>)
-  const handleSearch()
+  const handleSearch() {
+    
+  }
 
   return (
     <>
