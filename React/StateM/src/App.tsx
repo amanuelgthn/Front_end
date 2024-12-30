@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// importing useState Hook from react
 import { sculptureList } from './data';
 import './App.css'
 
@@ -24,10 +25,10 @@ function handleMoreClick() {
 let sculpture = sculptureList[index];
   return (
     <>
-    <button onClick={handlePrevClick}>
+    <button onClick={handlePrevClick} disabled={!hasPrev}>
       Previous
     </button>
-    <button onClick={handleNextClick}>
+    <button onClick={handleNextClick} disabled={!hasNext}>
       Next {index}
     </button>
     <h2>
