@@ -1,52 +1,23 @@
-import { useState } from 'react'
-// importing useState Hook from react
-import { sculptureList } from './data';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Gallery from './components/Gallery'
 import './App.css'
+import ChatApp from './components/ChatApp';
+import InteractiveForm from './components/InteractiveForm'
+import BucketList from './components/BucketList';
 
-export default function Gallery() {
-const [index, setIndex ] = useState(0);
-const [showMore, setShowMore] = useState(false)
-const hasNext = index < sculptureList.length -1;
-const hasPrev = index > 0;
-
-function handleNextClick() {
-  if (hasNext) {
-    setIndex(index + 1);
-  }
-}
-function handlePrevClick() {
-  if (hasPrev) {
-    setIndex(index - 1);
-  }
-}
-function handleMoreClick() {
-  setShowMore(!showMore);
-}
-let sculpture = sculptureList[index];
-  return (
-    <>
-    <button onClick={handlePrevClick} disabled={!hasPrev}>
-      Previous
-    </button>
-    <button onClick={handleNextClick} disabled={!hasNext}>
-      Next {index}
-    </button>
-    <h2>
-      <i>{sculpture.name}</i> by {sculpture.artist}
-    </h2>
-    <h3>
-      ({index + 1} of {sculptureList.length})
-    </h3>
-    <button onClick={handleMoreClick}>
-      {showMore ? 'Hide' : 'Show'} details
-    </button>
-    {showMore && <p>{sculpture.description}</p>}
-    <img
-        src={sculpture.url}
-        alt={sculpture.alt}
-    />
-    </>
-  )
+const App = () => {
+    return (
+        <main>
+            <Router>
+                <Routes>
+                    <Route path="/Gallery" element={<Gallery />} />
+                    <Route path="/ChatApp" element={<ChatApp />} />
+                    <Route path='/InteractiveForm' element={<InteractiveForm />} />
+                    <Route path='/BucketList' element={<BucketList />} />
+                </Routes>
+            </Router>
+        </main>
+    )
 }
 
-
+export default App;
