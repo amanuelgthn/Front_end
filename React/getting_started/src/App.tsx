@@ -3,6 +3,7 @@ import './App.css'
 
 const App = ()  => {
   const [filterText, setFilterText] = useState('')
+  
   const data = [
     { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
     { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
@@ -26,33 +27,29 @@ const App = ()  => {
                             <td>{data.name}</td>
                             <td>{data.price}</td>
                           </tr>
-                          </>)
-  const handleSearch() {
-    
-  }
+                    </>)
+  
 
   return (
     <>
     <div className='Category-Search'>
-      <input type='search' id='query' placeholder='Search'></input>
+      <input type='search' id='query' placeholder='Search...'></input>
     </div>
     <div className='checkbox'>
       <input type='checkbox' id='stock' />
       <label htmlFor='stock'>Only show products in stock</label>
     </div>
       <div className='category-Fruits'>
-        <ul>
           <table>
             <tr>
               <td>Name</td>
               <td>Price</td>
             </tr>
-              <h1>Fruits</h1>
+            <h3>Fruits</h3>
               {Fruits}
-              <h1>Vegetables</h1>
+            <h3>Vegetables</h3>
               {Vegetables}
           </table>
-        </ul>
       </div>
     </>
   )
