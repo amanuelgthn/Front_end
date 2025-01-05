@@ -7,6 +7,8 @@ import BucketList from './components/BucketList';
 import Click from './components/Click';
 import AlertPlay from './components/AlertPlay';
 import EventProps from './components/EventProps';
+import Clock from './components/Clock';
+import Form from './components/Form';
 
 const App = () => {
     return (
@@ -20,6 +22,8 @@ const App = () => {
                     <Route path='/Click' element={<Click />} />
                     <Route path='/AlertPlay' element={<AlertPlay />} />
                     <Route path='EventProps' element={<EventProps />} />
+                    <Route path='/Clock' element={<Clock />} />
+                    <Route path='/Form' element={<Form />} />
                 </Routes>
             </Router>
         </main>
