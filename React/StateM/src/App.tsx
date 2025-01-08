@@ -9,6 +9,8 @@ import AlertPlay from './components/AlertPlay';
 import EventProps from './components/EventProps';
 import Clock from './components/Clock';
 import Form from './components/Form';
+import TrafficLight from './components/TrafficLight';
+import Pointer from './components/Pointer';
 
 const App = () => {
     return (
@@ -24,6 +26,8 @@ const App = () => {
                     <Route path='EventProps' element={<EventProps />} />
                     <Route path='/Clock' element={<Clock />} />
                     <Route path='/Form' element={<Form />} />
+                    <Route path='/TrafficLight' element={<TrafficLight />} />
+                    <Route path='/Pointer' element={<Pointer />} />
                 </Routes>
             </Router>
         </main>
