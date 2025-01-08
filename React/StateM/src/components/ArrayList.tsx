@@ -27,7 +27,7 @@ const ArrayList: FC = () => {
                             setShoppingList(
                                 shoppinglist.filter((a) => a.id !== item.id
                                 ));
-                                setNextID(nextId - 1)
+                                setNextID(nextId - item.id)
                         }}>
                             Delete
                         </button></>
