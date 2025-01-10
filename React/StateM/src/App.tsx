@@ -11,6 +11,10 @@ import Clock from './components/Clock';
 import Form from './components/Form';
 import TrafficLight from './components/TrafficLight';
 import Pointer from './components/Pointer';
+import ArrayList from './components/ArrayList';
+import CircleMover from './components/CircleMover';
+import CounterList from './components/CounterList';
+import Onslider from './components/Onslider';
 
 const App = () => {
     return (
@@ -28,6 +32,10 @@ const App = () => {
                     <Route path='/Form' element={<Form />} />
                     <Route path='/TrafficLight' element={<TrafficLight />} />
                     <Route path='/Pointer' element={<Pointer />} />
+                    <Route path='/ArrayList' element={<ArrayList />} />
+                    <Route path='/CircleMover' element={<CircleMover />} />
+                    <Route path='/CounterList' element={<CounterList />} />
+                    <Route path='/Onslider' element={<Onslider />} />
                 </Routes>
             </Router>
         </main>
