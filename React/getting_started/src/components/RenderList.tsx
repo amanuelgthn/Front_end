@@ -1,10 +1,11 @@
 import React, { FC } from 'React';
 
+const array: any[] = []
 
 const RenderList: FC = () => {
     return (
         <>
-        {Array.map(item=> )}
+        {array.map(item=> )}
         </>
     )
 }
