@@ -1,6 +1,6 @@
 import React, { FC } from 'React';
 
-const array: any[] = []
+const array: any[] = ['green']
 
 const RenderList: FC = () => {
     return (
